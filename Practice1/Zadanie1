@@ -1,0 +1,12 @@
+#include <cmath>
+
+using namespace std;
+
+int main() {
+float P;
+
+P = sqrt(12) * (1 - (1.0/9) + (1.0/45) - (1.0/189) + (1.0/729) - (1.0/2673));
+
+cout << P << endl; 
+return 0;
+}
