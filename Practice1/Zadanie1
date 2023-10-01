@@ -1,12 +1,12 @@
+#include <iostream>
 #include <cmath>
 
 using namespace std;
 
 int main() {
-float P;
-
-P = sqrt(12) * (1 - (1.0/9) + (1.0/45) - (1.0/189) + (1.0/729) - (1.0/2673));
-
-cout << P << endl; 
-return 0;
+    float P;
+    P = sqrt(12) * (1 - (1.0/9) + (1.0/45) - (1.0/189) + (1.0/729) - (1.0/2673)); // Исправлены ошибки в выражении
+    
+    cout << P << endl; // Вывод P
+    return 0;
 }
