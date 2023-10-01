@@ -1,0 +1,9 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   float I,M,H;
+   cin>>M>>H;
+   I = M/(H*H);
+   cout<<I;
+}
