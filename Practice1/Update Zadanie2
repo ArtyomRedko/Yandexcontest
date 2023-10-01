@@ -1,0 +1,15 @@
+package main
+
+import (
+    "fmt"
+    "math"
+)
+
+func main() {
+    dub := 28
+    topol := 32
+    var f float64 = 365 * 0.5
+    var s float64 = f / float64(topol)
+    var a float64 = f / float64(dub)
+    fmt.Println(f, math.Round(s), math.Round(a))
+}
