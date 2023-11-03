@@ -1,0 +1,44 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var result [2]int
+	var flag bool = false
+	var count int
+	var target int
+	var value int
+	fmt.Scan(&count)
+	fmt.Scan(&target)
+	var numbers []int
+	for i := 0; i < count; i++ {
+		fmt.Scan(&value)
+		numbers = append(numbers, value)
+	}
+	for _, val := range numbers {
+		if val >= target {
+			continue
+		}
+		for _, val1 := range numbers {
+			if flag {
+				break
+			}
+			if val1 >= target {
+				continue
+			}
+			if val+val1 == target {
+				result[0] = val
+				result[1] = val1
+				flag = true
+				break
+			}
+		}
+	}
+	if result[0] > result[1] {
+		fmt.Print(result[1], result[0])
+	} else {
+		fmt.Print(result[0], result[1])
+	}
+}
