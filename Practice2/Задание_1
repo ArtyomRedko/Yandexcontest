@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cmath>
+
+bool is_prime(int r){
+    for (int i=2;i<=sqrt(r);i++){
+        if (r%i==0){
+            return false;}
+        
+    }
+    return true;
+}
+
+
