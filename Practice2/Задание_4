@@ -1,0 +1,17 @@
+
+#include <numeric>
+#include <algorithm>
+#include <cmath>
+#include <tuple>
+
+std::tuple<long, long> reduce(long a, long b){
+    long f = std::gcd(a,b);
+    return std::make_tuple(a / f, b / f);
+}
+
+std::tuple<long, long, long> find_lcm(long a, long b){
+    long lcm = a*b/std::gcd(a,b);
+    long p = lcm/a;
+    long q = lcm/b;
+    return std::make_tuple(lcm, p, q);
+}
