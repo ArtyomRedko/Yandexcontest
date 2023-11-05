@@ -1,1 +1,45 @@
+package main
 
+import (
+	"encoding/json"
+	 "fmt"
+	"io/ioutil"
+)
+
+type tasks struct {
+	User_id   int    `json:"user_id"`
+	Id        int    `json:"id"`
+	Title     string `json:"title"`
+	Completed bool   `json:"completed"`
+}
+
+type Project struct {
+	Project_id int `json:"project_id"`
+	Tasks      []tasks
+}
+
+func main() {
+	var x int
+	var resh int
+	fmt.Scan(&x)
+	data, err := ioutil.ReadFile("data.json")
+	if err != nil {
+		panic(err)
+	}
+	var a []Project
+	var b Project
+	var c tasks
+	json.Unmarshal([]byte(data), &a)
+	for i := 0; i < len(a); i++ {
+		b = a[i]
+		for j := 0; j < len(b.Tasks); j++ {
+			c = b.Tasks[j]
+			if c.User_id == x {
+				if c.Completed == true {
+					resh++
+				}
+			}
+		}
+	}
+	fmt.Println(resh)
+}
