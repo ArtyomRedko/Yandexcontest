@@ -1,0 +1,18 @@
+class Cat {
+public:
+    bool alive;
+    bool is_alive() {
+        return alive;
+    }
+    Cat(bool is_alivee) {
+        alive = is_alivee;
+    }
+};
+
+class Box {
+public:
+    Cat open() {
+        bool is_alive = (rand() % 2 == 1);
+        return Cat(is_alive);
+    }
+};
