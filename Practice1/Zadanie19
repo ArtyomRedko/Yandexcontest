@@ -1,0 +1,32 @@
+#include <unordered_map>
+#include <vector>
+#include <iostream>
+#include <string>
+
+#include <algorithm>
+using namespace std;
+
+int main() {
+ 
+    unordered_map<string, int> countt;
+    vector<std::string> answ;
+    string word;
+
+    while (cin >> word && word != "end") {
+        countt[word]++;
+    }
+
+    for (const auto& pair : countt) {
+        if (pair.second >= 2) {
+            answ.push_back(pair.first);
+        }
+    }
+
+    std::sort(answ.begin(), answ.end());
+
+    for (const auto& word : answ) {
+        cout << word << " ";
+    }
+
+    return 0;
+}
