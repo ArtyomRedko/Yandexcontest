@@ -1,0 +1,28 @@
+type Cat struct {
+ isAlive bool
+}
+
+func (c *Cat) is_alive() bool {
+ return c.isAlive
+}
+
+type Box struct {
+ catInside Cat
+ isOpened  bool
+}
+
+func (b *Box) open() Cat {
+ b.isOpened = true
+ if b.isOpened {
+  if randomChance() {
+   b.catInside.isAlive = true
+  } else {
+   b.catInside.isAlive = false
+  }
+ }
+ return b.catInside
+}
+
+func randomChance() bool {
+ return rand.Intn(2) == 0
+}
